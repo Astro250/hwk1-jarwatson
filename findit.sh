@@ -11,4 +11,4 @@
 #
 
 dir=$1
-
+#new line!

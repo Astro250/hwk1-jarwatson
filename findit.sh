@@ -11,4 +11,11 @@
 #
 
 dir=$1
-#new line!
+if [ -d "$dir" ]
+then
+	ls $dir | grep -e 'fits'>fitstmp
+	ls $dir | grep -oP '\K([\w.]*)(?=.cat)'>catstmp
+	grep -vFf catstmp fitstmp 
+else
+	echo "Directory $dir not found"
+fi
